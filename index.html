@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Mở tiếng lớn để có trải nghiệm tốt nhất 🔊">
+<meta name="description" content="Kho Báu hãy đi tìm kho báu">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Chúc mừng sinh nhật emiu 🎁">
-<meta property="og:description" content="Mở tiếng lớn để có trải nghiệm tốt nhất 🔊">
+<meta property="og:description" content="Kho Báu hãy đi tìm kho báu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chúc mừng sinh nhật emiu 🎁">
-<meta name="twitter:description" content="Mở tiếng lớn để có trải nghiệm tốt nhất 🔊">
+<meta name="twitter:description" content="Kho Báu hãy đi tìm kho báu">
 <title>Chúc mừng sinh nhật emiu 💖</title>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg1:#2a0f2e;--bg2:#0b0716;--fg:#fff4f8;--mut:#e9c4d6;--acc:#ff7eb6;--acc2:#ffd27e}
@@ -161,7 +161,7 @@ input.okfx{border-color:var(--acc2);box-shadow:0 0 28px var(--acc2)}
   <input id="i5" style="letter-spacing:.05em" placeholder="🔒 Mật mã" autocomplete="off"><button onclick="final()">Mở rương</button><div class="err" id="e5"></div>
  </div>
  <div id="win" class="stk fx">
-  <h2>Chúc mừng em đã tìm được kho báu 🎉</h2>
+  <h2>Chúc mừng Kho Báu đã tìm được kho báu 🎉</h2>
   <div class="card">Thứ được giấu ở nơi mà anh đã không nhắc em sắp xếp khi đi Đà Lạt</div>
  </div>
 </div>
@@ -201,7 +201,7 @@ const sfx={
 };
 /* ===== BACKGROUND MUSIC (loop) ===== */
 const SONG=[[262,.25],[262,.15],[294,.5],[262,.5],[349,.5],[330,1],[262,.25],[262,.15],[294,.5],[262,.5],[392,.5],[349,1],[523,.25],[523,.15],[440,.5],[349,.5],[330,.5],[294,1],[466,.25],[466,.15],[440,.5],[349,.5],[392,.5],[349,1.2]];
-const SONG_LEN=SONG.reduce((a,n)=>a+n[1],0)+1.8;let musicOn=false;
+const SONG_LEN=SONG.reduce((a,n)=>a+n[1],0);let musicOn=false;
 function music(){if(musicOn)return;musicOn=true;(function play(){let t=0;SONG.forEach(([f,d],i)=>{tone(f,t,d*1.25,'triangle',.07);tone(f*2,t,d,'sine',.025);if(i%3===0)tone(f/2,t,d*1.6,'sine',.04);t+=d});setTimeout(play,SONG_LEN*1000)})()}
 document.addEventListener('click',e=>{if(e.target.tagName==='BUTTON')sfx.click()},true);
 /* ===== PARTICLES ===== */
