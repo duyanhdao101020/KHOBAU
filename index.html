@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mở tiếng lớn để có trải nghiệm tốt nhất 🔊">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chúc mừng sinh nhật emiu 🎁">
+<meta property="og:description" content="Mở tiếng lớn để có trải nghiệm tốt nhất 🔊">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chúc mừng sinh nhật emiu 🎁">
+<meta name="twitter:description" content="Mở tiếng lớn để có trải nghiệm tốt nhất 🔊">
+<title>Chúc mừng sinh nhật emiu 💖</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg1:#2a0f2e;--bg2:#0b0716;--fg:#fff4f8;--mut:#e9c4d6;--acc:#ff7eb6;--acc2:#ffd27e}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(circle at 50% 20%,var(--bg1),var(--bg2));color:var(--fg);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;overflow-x:hidden}
+#cv{position:fixed;left:0;top:0;z-index:0;pointer-events:none}
+.scene{display:none;position:relative;z-index:1;min-height:100%;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:18px}
+.scene.on{display:flex}
+.stagger.on>*{animation:rise .8s cubic-bezier(.2,.9,.3,1.1) both;animation-delay:calc(var(--i,0)*.14s + .15s)}
+.stagger.on>.nos{animation:none}
+@keyframes rise{from{opacity:0;transform:translateY(32px) scale(.96)}to{opacity:1;transform:none}}
+h1{font-size:clamp(2rem,9vw,3.6rem);margin:0;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.25}
+h1.ltr{background:none;color:#fff;text-shadow:0 0 14px var(--acc),0 0 38px rgba(255,126,182,.7)}
+h2{font-size:clamp(1.3rem,5vw,1.9rem);margin:0;color:var(--acc2)}
+p{max-width:480px;margin:0;color:var(--mut);line-height:1.6;font-size:1.05rem}
+.small{font-size:.95rem}
+.w{display:inline-block;white-space:nowrap}
+.l{display:inline-block;opacity:0;animation:pop .8s cubic-bezier(.2,1.6,.4,1) forwards}
+.g .l{color:var(--acc2)}
+@keyframes pop{from{opacity:0;transform:translateY(46px) scale(.3) rotate(-14deg);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+.btns{display:flex;flex-direction:column;gap:12px;width:100%;max-width:320px}
+button{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:13px 22px;color:#2a0f2e;font-weight:600;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:transform .15s,box-shadow .3s;box-shadow:0 0 0 rgba(255,126,182,0)}
+button:hover{box-shadow:0 0 24px rgba(255,126,182,.7)}
+button:active{transform:scale(.95)}
+input{font:inherit;font-size:1.4rem;letter-spacing:.25em;text-align:center;width:100%;max-width:320px;padding:12px;border-radius:14px;border:2px solid var(--acc);background:rgba(255,255,255,.07);color:var(--fg);outline:none;transition:box-shadow .3s,border-color .3s}
+input:focus{box-shadow:0 0 18px rgba(255,126,182,.6)}
+input.okfx{border-color:var(--acc2);box-shadow:0 0 28px var(--acc2)}
+.row{display:flex;flex-direction:column;gap:12px;align-items:center;width:100%}
+.err{min-height:1.4em;color:#ff9db8;font-weight:600}
+.shake{animation:sh .4s}
+@keyframes sh{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.step{font-size:.8rem;letter-spacing:.25em;color:var(--acc)}
+.gift,.ico{display:inline-block;font-size:5.5rem;animation:bn 1.3s ease-in-out infinite;filter:drop-shadow(0 0 20px var(--acc))}
+.ico{font-size:3.2rem}
+@keyframes bn{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-16px) rotate(6deg)}}
+.fx{opacity:0;visibility:hidden;transition:opacity 1s,visibility 0s 1s}
+.fx.show{opacity:1;visibility:visible;transition:opacity 1s}
+.slot{display:grid;place-items:center;width:100%;max-width:520px}
+.slot>*{grid-area:1/1}
+#top{min-height:120px}#bot{min-height:260px}
+.stk{display:flex;flex-direction:column;align-items:center;gap:10px}
+#tre{font-family:'Brush Script MT','Segoe Script','Snell Roundhand',cursive,Georgia,serif;font-size:clamp(2.6rem,12vw,4rem);color:#ffe9a0;text-shadow:0 0 18px #ffb703,0 0 44px rgba(255,126,182,.8)}
+.card{border:1px solid rgba(255,210,126,.5);background:rgba(255,255,255,.06);border-radius:16px;padding:16px 18px;color:var(--fg);font-size:1.15rem;line-height:1.6;max-width:420px}
+.chestw{position:relative;isolation:isolate;width:min(70vw,290px);animation:rise 1s both,fl 3s 1s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-8px)}}
+.chestw.open{filter:drop-shadow(0 0 26px #ffb703)}
+.rays{position:absolute;left:50%;top:40%;width:170%;aspect-ratio:1;transform:translate(-50%,-50%);background:repeating-conic-gradient(from 0deg,rgba(255,225,140,.6) 0 7deg,transparent 7deg 22deg);-webkit-mask:radial-gradient(circle,#000 0,transparent 66%);mask:radial-gradient(circle,#000 0,transparent 66%);opacity:0;transition:opacity 1.2s;animation:spin 16s linear infinite;z-index:-1}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+#chest{width:100%;display:block;overflow:visible}
+#chest *{transform-box:view-box}
+#lidf{transform-origin:150px 128px;transition:transform .45s cubic-bezier(.5,0,.7,.4)}
+#lidb{transform-origin:150px 98px;transform:scaleY(0);transition:transform .55s cubic-bezier(.2,1.5,.4,1) .4s}
+#pile{opacity:0;transform:translateY(16px) scale(.9);transform-origin:150px 130px;transition:all .8s .5s}
+#lock{transform-origin:150px 130px;transition:all .5s}
+.open #lidf{transform:scaleY(0)}
+.open #lidb{transform:scaleY(1)}
+.open #pile{opacity:1;transform:none}
+.open #lock{opacity:0;transform:translateY(46px) rotate(25deg)}
+#wipe{position:fixed;inset:0;z-index:50;pointer-events:none;background:radial-gradient(circle,#ff7eb6,#8a2be2 65%,#2a0f2e);clip-path:circle(0% at 50% 50%);transition:clip-path .6s cubic-bezier(.7,0,.3,1)}
+#wipe.cover{clip-path:circle(150% at 50% 50%)}
+#wipe b{position:absolute;left:50%;top:50%;font-size:7rem;color:#fff;transform:translate(-50%,-50%) scale(0);transition:transform .5s .15s cubic-bezier(.2,1.6,.4,1)}
+#wipe.cover b{transform:translate(-50%,-50%) scale(1)}
+#flash{position:fixed;inset:0;z-index:60;background:#fff;opacity:0;pointer-events:none}
+#flash.go{animation:fla 2.2s ease-out}
+@keyframes fla{0%{opacity:0}15%{opacity:1}100%{opacity:0}}
+</style></head><body>
+<canvas id="cv"></canvas>
+
+<section class="scene stagger on" id="s0" onclick="go(1)">
+<div><span class="gift">🎁</span></div>
+<h2>Có một món quà dành cho em</h2>
+<button>Chạm để mở ✨</button>
+<p class="small">🔊 Nhớ mở loa lớn nhé</p>
+</section>
+
+<section class="scene stagger" id="s1">
+<div><span class="ico">🎂</span></div>
+<h1 class="ltr nos" id="ttl"></h1>
+<p class="small" style="--i:13">Anh có kho báu cho em, nhưng em sẽ phải vượt qua 1 chút chông gai để đạt được kho báu này, em sẵn sàng chưa?</p>
+<div class="btns" style="--i:16">
+<button onclick="go(2)">Sẵn sàng</button>
+<button onclick="go(2)">Đã sẵn sàng</button>
+<button onclick="go(2)">Em đã sẵn sàng</button>
+</div></section>
+
+<section class="scene stagger" id="s2">
+<div><span class="ico">🍻</span></div>
+<div class="step">THỬ THÁCH 1</div>
+<h2>Mật mã gồm 8 chữ số</h2>
+<p>Em có nhớ lần đầu tiên mình đi nhậu riêng với nhau là hôm nào không?</p>
+<div class="row"><input id="i2" inputmode="numeric" maxlength="8" placeholder="ddmmyyyy"><button onclick="chk(2,'04112025')">Mở khóa</button><div class="err" id="e2"></div></div>
+</section>
+
+<section class="scene stagger" id="s3">
+<div><span class="ico">🌹</span></div>
+<div class="step">THỬ THÁCH 2</div>
+<h2>Mật mã gồm 8 chữ số</h2>
+<p>Lần đầu anh tặng hoa cho em là hôm nào?</p>
+<div class="row"><input id="i3" inputmode="numeric" maxlength="8" placeholder="ddmmyyyy"><button onclick="chk(3,'17112025')">Mở khóa</button><div class="err" id="e3"></div></div>
+</section>
+
+<section class="scene stagger" id="s4">
+<div><span class="ico">🕶️</span></div>
+<div class="step">THỬ THÁCH 3</div>
+<h2>Bây giờ không chỉ cần trí nhớ nữa, mà còn cần cả sự phán đoán</h2>
+<p>Em có nhớ mình đã nắm tay nhau, cùng nhau thử đồ ăn trong bóng tối ở đâu không? Đó là <b>4 ký tự đầu</b> của mật mã.</p>
+<p>2 ký tự cuối cùng nằm trong thứ mà anh để lại với mong muốn em sẽ ôm cái gì đấy khi không có anh ở đây.</p>
+<div class="row"><input id="i4" maxlength="6" placeholder="6 ký tự" autocapitalize="off" autocomplete="off"><button onclick="chk(4,'noir12',true)">Mở khóa</button><div class="err" id="e4"></div></div>
+</section>
+
+<section class="scene" id="s5">
+<div class="slot" id="top">
+ <div class="stk fx show" id="pre"><h2 id="t1">Chúc mừng em tìm được rương báu</h2><h1 id="t2" class="fx">Nhưng</h1></div>
+ <div id="tre" class="fx"></div>
+</div>
+<div class="chestw" id="chestw">
+ <div class="rays" id="rays"></div>
+ <svg id="chest" viewBox="0 0 300 250" aria-label="Rương kho báu">
+  <defs>
+   <linearGradient id="wd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c47a35"/><stop offset="1" stop-color="#6b3a14"/></linearGradient>
+   <linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9a0"/><stop offset=".5" stop-color="#e8b64a"/><stop offset="1" stop-color="#a8741c"/></linearGradient>
+   <radialGradient id="pl" cx=".5" cy=".3" r=".8"><stop offset="0" stop-color="#fff3b0"/><stop offset="1" stop-color="#d89a22"/></radialGradient>
+  </defs>
+  <ellipse cx="150" cy="238" rx="124" ry="9" fill="#000" opacity=".4"/>
+  <g id="lidb"><path d="M46,98V62Q46,22 150,22Q254,22 254,62V98Z" fill="#4a2812" stroke="url(#gd)" stroke-width="7"/><path d="M62,92V64Q62,38 150,38Q238,38 238,64V92Z" fill="#6b3a14"/></g>
+  <ellipse cx="150" cy="128" rx="104" ry="13" fill="#2a1408"/>
+  <g id="pile">
+   <path d="M52,130Q70,92 110,96Q150,78 190,96Q232,92 248,130Z" fill="url(#pl)"/>
+   <g fill="url(#gd)" stroke="#a8741c" stroke-width="1.5"><ellipse cx="95" cy="108" rx="13" ry="5"/><ellipse cx="130" cy="94" rx="13" ry="5"/><ellipse cx="170" cy="96" rx="13" ry="5"/><ellipse cx="206" cy="110" rx="13" ry="5"/><ellipse cx="150" cy="112" rx="14" ry="5"/><ellipse cx="72" cy="122" rx="12" ry="4"/><ellipse cx="228" cy="122" rx="12" ry="4"/></g>
+   <circle cx="112" cy="104" r="7" fill="#ff3b6b"/><circle cx="188" cy="104" r="7" fill="#3bb0ff"/><circle cx="150" cy="90" r="8" fill="#4dff9a"/><circle cx="82" cy="116" r="5" fill="#c77bff"/>
+  </g>
+  <g id="body">
+   <rect x="42" y="128" width="216" height="104" rx="8" fill="url(#wd)"/>
+   <path d="M42,162H258M42,197H258" stroke="#4a2812" stroke-width="3" opacity=".6"/>
+   <rect x="42" y="126" width="216" height="10" fill="url(#gd)"/><rect x="42" y="128" width="20" height="104" fill="url(#gd)"/><rect x="238" y="128" width="20" height="104" fill="url(#gd)"/><rect x="42" y="218" width="216" height="14" rx="4" fill="url(#gd)"/>
+   <g fill="#7a4f12"><circle cx="52" cy="150" r="3"/><circle cx="52" cy="190" r="3"/><circle cx="248" cy="150" r="3"/><circle cx="248" cy="190" r="3"/></g>
+  </g>
+  <g id="lidf">
+   <path d="M42,128V98Q42,56 150,56Q258,56 258,98V128Z" fill="url(#wd)"/>
+   <path d="M46,96Q150,30 254,96" fill="none" stroke="#4a2812" stroke-width="3" opacity=".5"/>
+   <rect x="42" y="90" width="20" height="38" fill="url(#gd)"/><rect x="238" y="90" width="20" height="38" fill="url(#gd)"/><rect x="42" y="118" width="216" height="10" fill="url(#gd)"/>
+  </g>
+  <g id="lock"><rect x="132" y="106" width="36" height="42" rx="6" fill="url(#gd)" stroke="#7a4f12" stroke-width="2"/><circle cx="150" cy="124" r="6" fill="#2a1408"/><rect x="147" y="124" width="6" height="13" rx="2" fill="#2a1408"/></g>
+ </svg>
+</div>
+<div class="slot" id="bot">
+ <div id="lock2" class="row fx">
+  <p>Vẫn cần phải mở được khóa của rương kho báu để chạm tay được đến phần quà.</p>
+  <p class="small">Gợi ý: Mật mã nằm ở nơi mình đã mua trong Gigamall, rồi sau đấy anh tặng em thêm 1 cái tương tự, để 1 cái ở nhà, 1 cái ở công ty.</p>
+  <input id="i5" style="letter-spacing:.05em" placeholder="🔒 Mật mã" autocomplete="off"><button onclick="final()">Mở rương</button><div class="err" id="e5"></div>
+ </div>
+ <div id="win" class="stk fx">
+  <h2>Chúc mừng em đã tìm được kho báu 🎉</h2>
+  <div class="card">Thứ được giấu ở nơi mà anh đã không nhắc em sắp xếp khi đi Đà Lạt</div>
+ </div>
+</div>
+</section>
+
+<div id="wipe"><b>♥</b></div><div id="flash"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+/* ===== AUDIO ===== */
+let ac=null;
+function A(){if(!ac){try{ac=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(ac&&ac.state==='suspended')ac.resume();return ac}
+function tone(f,t,d,type='sine',v=.15,to){const c=A();if(!c)return;const o=c.createOscillator(),g=c.createGain(),st=c.currentTime+t;
+ o.type=type;o.frequency.setValueAtTime(f,st);if(to)o.frequency.exponentialRampToValueAtTime(to,st+d);
+ g.gain.setValueAtTime(0.0001,st);g.gain.exponentialRampToValueAtTime(v,st+.02);g.gain.exponentialRampToValueAtTime(0.0001,st+d);
+ o.connect(g).connect(c.destination);o.start(st);o.stop(st+d+.05)}
+function noise(t,d,f0,f1,v,type='lowpass'){const c=A();if(!c)return;const n=c.sampleRate*d|0,b=c.createBuffer(1,n,c.sampleRate),x=b.getChannelData(0);
+ for(let i=0;i<n;i++)x[i]=(Math.random()*2-1)*(1-i/n);const s=c.createBufferSource();s.buffer=b;const fl=c.createBiquadFilter();fl.type=type;
+ const st=c.currentTime+t;fl.frequency.setValueAtTime(f0,st);fl.frequency.exponentialRampToValueAtTime(f1,st+d);
+ const g=c.createGain();g.gain.value=v;s.connect(fl).connect(g).connect(c.destination);s.start(st)}
+const sfx={
+ click:()=>tone(660,0,.12,'triangle',.12),
+ tick:()=>tone(900,0,.07,'square',.05),
+ swoosh:()=>{noise(0,.6,300,3200,.3,'bandpass');tone(300,0,.5,'sine',.06,1200)},
+ ok:()=>[523,659,784,1047].forEach((f,i)=>tone(f,i*.09,.35,'sine',.14)),
+ wrong:()=>{tone(220,0,.18,'sawtooth',.1,150);tone(160,.16,.28,'sawtooth',.1,100)},
+ sparkle:()=>[1318,1568,1760,2093].forEach((f,i)=>tone(f,i*.1,.4,'sine',.09)),
+ suspense:()=>{tone(70,0,1.6,'sine',.25);tone(73,0,1.6,'sine',.2);[0,.5,1].forEach(t=>tone(110,t,.2,'square',.07,60))},
+ whistle:()=>tone(500,0,.45,'sine',.04,1800),
+ boom:()=>{noise(0,.9,900,60,.5);tone(90,0,.5,'sine',.3,40)},
+ crackle:()=>{for(let i=0;i<7;i++)noise(.05+i*.07,.05,6000,3000,.12,'highpass')},
+ fanfare:()=>{[523,659,784,1047].forEach((f,i)=>tone(f,i*.12,.5,'triangle',.14));[523,659,784,1047].forEach(f=>tone(f,.5,1.2,'sine',.08))},
+ heart:()=>{tone(60,0,.2,'sine',.6,40);tone(60,.24,.25,'sine',.6,40)},
+ coin:()=>{for(let i=0;i<10;i++)tone(2000+Math.random()*1800,Math.random()*1.4,.22,'sine',.05)},
+ creak:()=>tone(140,0,.9,'sawtooth',.07,380),
+ open:()=>{sfx.creak();[523,659,784,1047,1319,1568].forEach((f,i)=>tone(f,.6+i*.08,.9,'triangle',.13));[1047,1319,1568,2093].forEach((f,i)=>tone(f,1.3+i*.12,1.4,'sine',.1));[392,523,659,784].forEach(f=>tone(f,1.4,1.8,'sine',.09))}
+};
+/* ===== BACKGROUND MUSIC (loop) ===== */
+const SONG=[[262,.25],[262,.15],[294,.5],[262,.5],[349,.5],[330,1],[262,.25],[262,.15],[294,.5],[262,.5],[392,.5],[349,1],[523,.25],[523,.15],[440,.5],[349,.5],[330,.5],[294,1],[466,.25],[466,.15],[440,.5],[349,.5],[392,.5],[349,1.2]];
+const SONG_LEN=SONG.reduce((a,n)=>a+n[1],0)+1.8;let musicOn=false;
+function music(){if(musicOn)return;musicOn=true;(function play(){let t=0;SONG.forEach(([f,d],i)=>{tone(f,t,d*1.25,'triangle',.07);tone(f*2,t,d,'sine',.025);if(i%3===0)tone(f/2,t,d*1.6,'sine',.04);t+=d});setTimeout(play,SONG_LEN*1000)})()}
+document.addEventListener('click',e=>{if(e.target.tagName==='BUTTON')sfx.click()},true);
+/* ===== PARTICLES ===== */
+const cv=$('cv'),cx=cv.getContext('2d'),P=[],cols=['#ff7eb6','#ffd27e','#7ee8ff','#b57eff','#ffffff','#7effa8'];let W,H,D;
+function rs(){D=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*D;cv.height=H*D;cv.style.width=W+'px';cv.style.height=H+'px';cx.setTransform(D,0,0,D,0,0)}
+addEventListener('resize',rs);rs();
+const pick=()=>cols[Math.random()*cols.length|0];
+function burst(x,y){const c=pick(),c2=pick();for(let i=0;i<70;i++){const a=Math.random()*6.283,s=1+Math.random()*4.5;P.push({t:0,x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:0,m:70+Math.random()*40,c:i%2?c:c2,r:1.5+Math.random()*1.5})}}
+function conf(n){for(let i=0;i<n;i++)P.push({t:1,x:Math.random()*W,y:-20-Math.random()*H*.4,vx:Math.random()*2-1,vy:2+Math.random()*3,l:0,c:pick(),r:5+Math.random()*5,a:Math.random()*6,va:Math.random()*.2-.1})}
+function shoot(x,y){sfx.whistle();setTimeout(()=>{burst(x,y);sfx.boom();sfx.crackle()},450)}
+(function loop(){cx.clearRect(0,0,W,H);if(Math.random()<.06)P.push({t:2,x:Math.random()*W,y:H+20,vx:0,vy:-(.6+Math.random()*1.2),l:0,c:cols[Math.random()*2|0],r:10+Math.random()*18});
+ for(let i=P.length-1;i>=0;i--){const p=P[i];p.l++;p.x+=p.vx;p.y+=p.vy;
+  if(p.t===0){p.vy+=.045;p.vx*=.985;p.vy*=.985;cx.globalAlpha=Math.max(0,1-p.l/p.m);cx.fillStyle=p.c;cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();if(p.l>p.m)P.splice(i,1)}
+  else if(p.t===1){p.a+=p.va;p.x+=Math.sin(p.l/20);cx.globalAlpha=1;cx.fillStyle=p.c;cx.save();cx.translate(p.x,p.y);cx.rotate(p.a);cx.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);cx.restore();if(p.y>H+20)P.splice(i,1)}
+  else{p.x+=Math.sin(p.l/30)*.4;cx.globalAlpha=.35;cx.fillStyle=p.c;cx.font=p.r+'px serif';cx.fillText('♥',p.x,p.y);if(p.y<-30)P.splice(i,1)}}
+ cx.globalAlpha=1;requestAnimationFrame(loop)})();
+/* ===== HELPERS ===== */
+function letters(el,t,d=0,s=.06){el.innerHTML='';let k=0;t.split(' ').forEach(w=>{const ws=document.createElement('span');ws.className='w'+(w==='emiu'?' g':'');[...w].forEach(ch=>{const l=document.createElement('span');l.className='l';l.textContent=ch;l.style.animationDelay=(d+k++*s)+'s';ws.appendChild(l)});el.appendChild(ws);el.appendChild(document.createTextNode(' '))})}
+document.querySelectorAll('.stagger').forEach(s=>[...s.children].forEach((c,i)=>{if(!c.style.getPropertyValue('--i'))c.style.setProperty('--i',i)}));
+letters($('ttl'),'Chúc mừng sinh nhật emiu',.5);
+/* ===== SCENES ===== */
+let busy=false,iv=null;
+function go(n){if(busy)return;busy=true;sfx.swoosh();const w=$('wipe');w.classList.add('cover');
+ setTimeout(()=>{document.querySelectorAll('.scene').forEach(s=>s.classList.remove('on'));$('s'+n).classList.add('on');scrollTo(0,0);enter(n);w.classList.remove('cover');sfx.sparkle()},700);
+ setTimeout(()=>busy=false,1350)}
+function enter(n){clearInterval(iv);
+ if(n===1){[[.5,.3],[.25,.4],[.75,.35],[.4,.22],[.65,.45]].forEach((p,i)=>setTimeout(()=>shoot(W*p[0],H*p[1]),700+i*450));
+  setTimeout(()=>{conf(150);sfx.fanfare()},900);setTimeout(music,2200);
+  iv=setInterval(()=>shoot(W*(.15+Math.random()*.7),H*(.12+Math.random()*.35)),2800)}
+ if(n===5)intro()}
+function bad(n){sfx.wrong();const e=$('e'+n),i=$('i'+n);e.textContent='Cố lên, anh tin em sẽ nhớ ra 💪';i.classList.remove('shake');void i.offsetWidth;i.classList.add('shake');if(n===5)setTimeout(()=>i.classList.remove('shake'),450)}
+function chk(n,a,ci){if(busy)return;let v=$('i'+n).value.trim();if(ci)v=v.toLowerCase();if(v!==a)return bad(n);
+ $('i'+n).classList.add('okfx');sfx.ok();burst(W/2,H*.4);setTimeout(()=>go(n+1),700)}
+['i2','i3','i4','i5'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter'){id==='i5'?final():chk(+id[1],{2:'04112025',3:'17112025',4:'noir12'}[id[1]],id==='i4')}}));
+function intro(){const t2=$('t2');
+ setTimeout(sfx.sparkle,300);
+ setTimeout(()=>{t2.classList.add('show');sfx.suspense()},1800);
+ for(let i=0;i<5;i++)setTimeout(()=>{t2.textContent+='.';sfx.tick()},2300+i*380);
+ setTimeout(()=>{$('lock2').classList.add('show');sfx.sparkle()},4600)}
+function final(){const v=$('i5').value.normalize('NFC');
+ if(v!=='Công Chúa Rùa'.normalize('NFC'))return bad(5);
+ sfx.open();$('flash').classList.add('go');$('lock2').classList.remove('show');$('pre').classList.remove('show');
+ setTimeout(()=>{$('chestw').classList.add('open');$('rays').style.opacity=1;sfx.coin()},500);
+ setTimeout(()=>{conf(220);[[.2,.25],[.8,.3],[.5,.15]].forEach((p,i)=>setTimeout(()=>shoot(W*p[0],H*p[1]),i*500));
+  iv=setInterval(()=>shoot(W*(.1+Math.random()*.8),H*(.1+Math.random()*.4)),1700);setTimeout(()=>clearInterval(iv),30000)},900);
+ setTimeout(()=>{const t=$('tre');letters(t,'You are my treasure',0,.07);t.classList.add('show');sfx.heart()},1700);
+ setTimeout(()=>$('win').classList.add('show'),3400)}
+</script>
+</body></html>
