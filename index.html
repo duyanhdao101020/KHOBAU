@@ -78,8 +78,8 @@ input.okfx{border-color:var(--acc2);box-shadow:0 0 28px var(--acc2)}
 .bi.f1{background-image:url(img/f1.webp);left:-4%;top:2%;transform:rotate(-10deg)}
 .bi.f2{background-image:url(img/f2.webp);right:-4%;bottom:2%;transform:rotate(12deg)}
 .bi.c,.bi.sh1,.bi.sh2{aspect-ratio:1;-webkit-mask-image:radial-gradient(closest-side,#000 35%,transparent 100%);mask-image:radial-gradient(closest-side,#000 35%,transparent 100%)}
-.bi.c{aspect-ratio:1;width:calc(var(--s)*min(34vw,19vh));left:calc(var(--x)*1%);top:calc(var(--y)*1%);transform:rotate(var(--r));opacity:.92;-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);animation:drift 10s ease-in-out infinite;animation-delay:calc(var(--d)*-1s)}
-@keyframes drift{50%{translate:0 -12px}}
+.bi.c{aspect-ratio:auto;background-size:100% 100%;width:calc(var(--s)*34%);height:calc(var(--s)*22%);left:calc(var(--x)*1%);top:calc(var(--y)*1%);transform:translate(-50%,-50%) rotate(var(--r));opacity:.93;-webkit-mask-image:radial-gradient(closest-side,#000 66%,transparent 100%);mask-image:radial-gradient(closest-side,#000 66%,transparent 100%);animation:drift 10s ease-in-out infinite;animation-delay:calc(var(--d)*-1s)}
+@keyframes drift{50%{translate:0 -10px}}
 .bg.d::after{background:radial-gradient(ellipse at center,rgba(11,7,22,.6) 0,rgba(11,7,22,.2) 80%)}
 .bi.c1{background-image:url(img/c1.webp)}
 .bi.c2{background-image:url(img/c2.webp)}
@@ -128,10 +128,10 @@ input{max-width:15em;padding:.55em;border-radius:.6em}
 #lock2 p{font-size:1rem}
 .bi.f1,.bi.f2{width:min(40vw,82vh)}
 .bi.f1{left:4%;top:0}.bi.f2{right:4%;bottom:0}
-.bi.c{width:calc(var(--s)*min(24vw,31vh))}
+.bi.c{width:calc(var(--s)*33%);height:calc(var(--s)*36%)}
 .bi.sh1,.bi.sh2,.bi.sh3,.bi.sh4{width:min(34vw,70vh)}
 .bi.sh1{width:min(30vw,56vh)}
-.bi.sh3{width:min(26vw,44vh)}
+.bi.sh3{width:min(26vw,44vh);left:50%;top:50%;bottom:auto;transform:translate(-50%,-50%) rotate(-8deg)}
 }
 </style></head><body>
 <canvas id="cv"></canvas>
@@ -172,7 +172,7 @@ input{max-width:15em;padding:.55em;border-radius:.6em}
 </section>
 
 <section class="scene stagger" id="s4">
-<div class="bg d"><div class="bi c c1" style="--x:3;--y:2;--r:-7deg;--s:0.95;--d:0"></div><div class="bi c c2" style="--x:36;--y:-3;--r:5deg;--s:1;--d:2"></div><div class="bi c c3" style="--x:70;--y:3;--r:-4deg;--s:0.95;--d:4"></div><div class="bi c c4" style="--x:0;--y:35;--r:6deg;--s:1;--d:1"></div><div class="bi c c5" style="--x:34;--y:40;--r:-5deg;--s:0.9;--d:3"></div><div class="bi c c6" style="--x:72;--y:36;--r:7deg;--s:1;--d:5"></div><div class="bi c c7" style="--x:4;--y:68;--r:-6deg;--s:0.95;--d:2"></div><div class="bi c c8" style="--x:36;--y:72;--r:4deg;--s:1;--d:6"></div><div class="bi c c9" style="--x:69;--y:66;--r:-8deg;--s:0.95;--d:4"></div></div>
+<div class="bg d"><div class="bi c c1" style="--x:17;--y:17;--r:-3deg;--s:1;--d:0"></div><div class="bi c c2" style="--x:50.5;--y:15.5;--r:2deg;--s:1.05;--d:2"></div><div class="bi c c3" style="--x:83;--y:17.5;--r:-2deg;--s:0.95;--d:4"></div><div class="bi c c4" style="--x:16;--y:49.5;--r:3deg;--s:1.05;--d:1"></div><div class="bi c c5" style="--x:50;--y:51;--r:-2deg;--s:0.95;--d:3"></div><div class="bi c c6" style="--x:84;--y:49;--r:3deg;--s:1;--d:5"></div><div class="bi c c7" style="--x:17.5;--y:83;--r:-3deg;--s:0.97;--d:2"></div><div class="bi c c8" style="--x:50;--y:84;--r:2deg;--s:1.05;--d:6"></div><div class="bi c c9" style="--x:83.5;--y:82.5;--r:-3deg;--s:1;--d:4"></div></div>
 <div><span class="ico">🕶️</span></div>
 <div class="step">CHÔNG GAI 3</div>
 <h2>Bây giờ không chỉ cần trí nhớ nữa, mà còn cần cả sự phán đoán</h2>
