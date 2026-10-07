@@ -248,10 +248,10 @@ const $=id=>document.getElementById(id);
 /* ===== AUDIO ===== */
 let ac=null;
 function A(){if(!ac){try{ac=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(ac&&ac.state==='suspended')ac.resume();return ac}
-function tone(f,t,d,type='sine',v=.15,to){const c=A();if(!c)return;const o=c.createOscillator(),g=c.createGain(),st=c.currentTime+t;
+function tone(f,t,d,type='sine',v=.15,to,dest){const c=A();if(!c)return;const o=c.createOscillator(),g=c.createGain(),st=c.currentTime+t;
  o.type=type;o.frequency.setValueAtTime(f,st);if(to)o.frequency.exponentialRampToValueAtTime(to,st+d);
  g.gain.setValueAtTime(0.0001,st);g.gain.exponentialRampToValueAtTime(v,st+.02);g.gain.exponentialRampToValueAtTime(0.0001,st+d);
- o.connect(g).connect(c.destination);o.start(st);o.stop(st+d+.05)}
+ o.connect(g).connect(dest||c.destination);o.start(st);o.stop(st+d+.05)}
 function noise(t,d,f0,f1,v,type='lowpass'){const c=A();if(!c)return;const n=c.sampleRate*d|0,b=c.createBuffer(1,n,c.sampleRate),x=b.getChannelData(0);
  for(let i=0;i<n;i++)x[i]=(Math.random()*2-1)*(1-i/n);const s=c.createBufferSource();s.buffer=b;const fl=c.createBiquadFilter();fl.type=type;
  const st=c.currentTime+t;fl.frequency.setValueAtTime(f0,st);fl.frequency.exponentialRampToValueAtTime(f1,st+d);
@@ -281,8 +281,17 @@ const sfx={
 /* ===== BACKGROUND MUSIC (loop) ===== */
 const SONG=[[262,.25],[262,.15],[294,.5],[262,.5],[349,.5],[330,1],[262,.25],[262,.15],[294,.5],[262,.5],[392,.5],[349,1],[523,.25],[523,.15],[440,.5],[349,.5],[330,.5],[294,1],[466,.25],[466,.15],[440,.5],[349,.5],[392,.5],[349,1.2]];
 const SONG_LEN=SONG.reduce((a,n)=>a+n[1],0);let musicOn=false;
-function music(){if(musicOn)return;musicOn=true;(function play(){let t=0;SONG.forEach(([f,d],i)=>{tone(f,t,d*1.25,'triangle',.07);tone(f*2,t,d,'sine',.025);if(i%3===0)tone(f/2,t,d*1.6,'sine',.04);t+=d});setTimeout(play,SONG_LEN*1000)})()}
+let mgn=null,musicHalt=false;
+function MG(){const c=A();if(!c)return null;if(!mgn){mgn=c.createGain();mgn.connect(c.destination)}return mgn}
+function stopMusic(){musicHalt=true;if(mgn&&ac){mgn.gain.cancelScheduledValues(ac.currentTime);mgn.gain.setValueAtTime(mgn.gain.value,ac.currentTime);mgn.gain.linearRampToValueAtTime(0,ac.currentTime+.4)}}
+function music(){if(musicOn)return;musicOn=true;(function play(){if(musicHalt)return;let t=0;const d0=MG();SONG.forEach(([f,d],i)=>{tone(f,t,d*1.25,'triangle',.07,undefined,d0);tone(f*2,t,d,'sine',.025,undefined,d0);if(i%3===0)tone(f/2,t,d*1.6,'sine',.04,undefined,d0);t+=d});setTimeout(play,SONG_LEN*1000)})()}
 document.addEventListener('click',e=>{if(e.target.tagName==='BUTTON')sfx.click()},true);
+/* ===== LOVE SONG (put the file at audio/song.mp3) ===== */
+const SONG_FILE='res/MORE_THAN_I_CAN_SAY.mp3',SONG_START=0; // SONG_START = second where the line "I love you more than I can say" begins
+const loveSong=new Audio();loveSong.preload='none';loveSong.volume=1;loveSong.loop=SONG_START===0;
+loveSong.addEventListener('ended',()=>{loveSong.currentTime=SONG_START;loveSong.play().catch(()=>{})});
+function preloadSong(){if(!loveSong.src){loveSong.preload='auto';loveSong.src=SONG_FILE;loveSong.load()}}
+function playLoveSong(){preloadSong();loveSong.currentTime=SONG_START;loveSong.volume=1;loveSong.play().then(stopMusic).catch(()=>{})}
 /* ===== PARTICLES ===== */
 const cv=$('cv'),cx=cv.getContext('2d'),P=[],cols=['#ff7eb6','#ffd27e','#7ee8ff','#b57eff','#ffffff','#7effa8'];let W,H,D;
 function rs(){D=Math.min(devicePixelRatio||1,1.5);W=innerWidth;H=innerHeight;cv.width=W*D;cv.height=H*D;cv.style.width=W+'px';cv.style.height=H+'px';cx.setTransform(D,0,0,D,0,0)}
@@ -367,7 +376,7 @@ function enter(n){clearInterval(iv);clearPops();
  if(n===1){s1T=performance.now();popT=setTimeout(startPops,5200);[[.5,.3],[.25,.4],[.75,.35],[.4,.22],[.65,.45]].forEach((p,i)=>setTimeout(()=>shoot(W*p[0],H*p[1]),700+i*450));
   setTimeout(()=>{conf(90);sfx.fanfare()},900);setTimeout(music,2200);
   iv=setInterval(()=>shoot(W*(.15+Math.random()*.7),H*(.12+Math.random()*.35)),2800)}
- if(n===5)intro()}
+ if(n===5){preloadSong();intro()}}
 function bad(n){sfx.wrong();const e=$('e'+n),i=$('i'+n);e.textContent='Cố lên, anh tin em sẽ nhớ ra ❤️💏';i.classList.remove('shake');void i.offsetWidth;i.classList.add('shake');if(n===5)setTimeout(()=>i.classList.remove('shake'),450)}
 function chk(n,a,ci){if(busy)return;let v=$('i'+n).value.trim();if(ci)v=v.toLowerCase();if(v!==a)return bad(n);
  $('i'+n).classList.add('okfx');sfx.ok();burst(W/2,H*.4);setTimeout(()=>go(n+1),700)}
@@ -379,7 +388,7 @@ function intro(){const t2=$('t2');
  setTimeout(()=>{$('lock2').classList.add('show');sfx.sparkle()},4600)}
 function final(){const v=$('i5').value.trim().normalize('NFC');
  if(v!=='Hạc'.normalize('NFC'))return bad(5);
- sfx.open();const g=$('bg5');g.style.animation='none';g.style.opacity=1;void g.offsetWidth;g.style.transition='opacity 1.6s';g.style.opacity=0;setTimeout(()=>$('bg6').style.opacity=1,900);$('flash').classList.add('go');$('lock2').classList.remove('show');$('pre').classList.remove('show');
+ playLoveSong();sfx.open();const g=$('bg5');g.style.animation='none';g.style.opacity=1;void g.offsetWidth;g.style.transition='opacity 1.6s';g.style.opacity=0;setTimeout(()=>$('bg6').style.opacity=1,900);$('flash').classList.add('go');$('lock2').classList.remove('show');$('pre').classList.remove('show');
  setTimeout(()=>{$('chestw').classList.add('open');$('rays').style.opacity=1;sfx.coin()},500);
  setTimeout(()=>{conf(120);[[.2,.25],[.8,.3],[.5,.15]].forEach((p,i)=>setTimeout(()=>shoot(W*p[0],H*p[1]),i*500));
   iv=setInterval(()=>shoot(W*(.1+Math.random()*.8),H*(.1+Math.random()*.4)),1700);setTimeout(()=>clearInterval(iv),30000)},900);
