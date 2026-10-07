@@ -287,11 +287,12 @@ function stopMusic(){musicHalt=true;if(mgn&&ac){mgn.gain.cancelScheduledValues(a
 function music(){if(musicOn)return;musicOn=true;(function play(){if(musicHalt)return;let t=0;const d0=MG();SONG.forEach(([f,d],i)=>{tone(f,t,d*1.25,'triangle',.07,undefined,d0);tone(f*2,t,d,'sine',.025,undefined,d0);if(i%3===0)tone(f/2,t,d*1.6,'sine',.04,undefined,d0);t+=d});setTimeout(play,SONG_LEN*1000)})()}
 document.addEventListener('click',e=>{if(e.target.tagName==='BUTTON')sfx.click()},true);
 /* ===== LOVE SONG (put the file at audio/song.mp3) ===== */
-const SONG_FILE='res/MORE_THAN_I_CAN_SAY.mp3',SONG_START=0; // SONG_START = second where the line "I love you more than I can say" begins
+const SONG_FILES=['MORE%20THAN%20I%20CAN%20SAY.mp3','MORE_THAN_I_CAN_SAY.mp3'],SONG_START=0;let songIdx=0,songWant=false; // SONG_START = second where the line "I love you more than I can say" begins
 const loveSong=new Audio();loveSong.preload='none';loveSong.volume=1;loveSong.loop=SONG_START===0;
 loveSong.addEventListener('ended',()=>{loveSong.currentTime=SONG_START;loveSong.play().catch(()=>{})});
-function preloadSong(){if(!loveSong.src){loveSong.preload='auto';loveSong.src=SONG_FILE;loveSong.load()}}
-function playLoveSong(){preloadSong();loveSong.currentTime=SONG_START;loveSong.volume=1;loveSong.play().then(stopMusic).catch(()=>{})}
+function preloadSong(){if(!loveSong.src){loveSong.preload='auto';loveSong.src=SONG_FILES[0];loveSong.load()}}
+loveSong.addEventListener('error',()=>{if(songIdx<SONG_FILES.length-1){songIdx++;loveSong.src=SONG_FILES[songIdx];loveSong.load();if(songWant)loveSong.play().then(stopMusic).catch(()=>{})}});
+function playLoveSong(){songWant=true;preloadSong();loveSong.currentTime=SONG_START;loveSong.volume=1;loveSong.play().then(stopMusic).catch(()=>{})}
 /* ===== PARTICLES ===== */
 const cv=$('cv'),cx=cv.getContext('2d'),P=[],cols=['#ff7eb6','#ffd27e','#7ee8ff','#b57eff','#ffffff','#7effa8'];let W,H,D;
 function rs(){D=Math.min(devicePixelRatio||1,1.5);W=innerWidth;H=innerHeight;cv.width=W*D;cv.height=H*D;cv.style.width=W+'px';cv.style.height=H+'px';cx.setTransform(D,0,0,D,0,0)}
